@@ -36,6 +36,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return getUsers();
                 case url.match(/\/users\/\d+$/) && method === 'DELETE':
                     return deleteUser();
+                case url.match(/\/events\/\d+$/) && method === 'DELETE':
+                    return deleteEvent();
                 default:
                     // pass through any requests not handled above
                     return next.handle(request);
@@ -99,6 +101,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         function getEvents() {
             return ok(events);
         }
+         function deleteEvent() {
+            events = events.filter(x => x.id !== idFromUrl());
+            localStorage.setItem('events', JSON.stringify(events));
+            return ok();
+        }
+        
 
         // helper functions
 

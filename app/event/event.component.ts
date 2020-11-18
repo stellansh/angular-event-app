@@ -48,7 +48,7 @@ export class EventComponent implements OnInit {
             .subscribe(
                 data => {
                     this.alertService.success('Event created', true);
-                    this.router.navigate(['/event']);
+                    this.router.navigate(['/']);
                 },
                 error => {
                     this.alertService.error(error);
