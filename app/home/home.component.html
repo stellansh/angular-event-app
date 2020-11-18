@@ -1,15 +1,15 @@
-<h2>Welcome to EventApp</h2>
 <p>Hi {{currentUser.firstName}}! </p>
+<h2>Welcome to EventApp</h2>
 
-<h5>Available Events:</h5>
+
+<h5>All Events:</h5>
 <ul> 
-  <li> <a routerLink="/" class="btn btn-link">Marathon Day </a> </li> 
 
-  <li *ngFor="let event of events">{{event.eventname}} {{event.date}}
+  <li *ngFor="let event of events">
+        <a routerLink="/" class="btn btn-link">{{event.eventname}} {{event.date}} </a>
         <a (click)="deleteEvent(event.id)" class="text-danger">Delete</a>
-
+  
   </li></ul>
-
 
 <h5>Registered Users:</h5>
 
