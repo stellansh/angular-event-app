@@ -29,7 +29,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 case url.endsWith('/events/authenticate') && method === 'POST':
                     return authenticate();
               case url.endsWith('events/event') && method === 'POST':
-                    return createEvent();
+                    return create();
                 case url.endsWith('/events') && method === 'GET':
                     return getEvents();
                 case url.endsWith('/users') && method === 'GET':

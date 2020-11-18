@@ -24,8 +24,8 @@ export class EventComponent implements OnInit {
 
     ngOnInit() {
         this.eventForm = this.formBuilder.group({
-            eventName: ['', Validators.required],
-            eventDescription: ['', Validators.required],
+            eventname: ['', Validators.required],
+            description: ['', Validators.required],
             date: ['', Validators.required],
             location: ['', [Validators.required, Validators.minLength(3)]]
         });
@@ -43,7 +43,7 @@ export class EventComponent implements OnInit {
         }
 
         this.loading = true;
-        this.eventService.createEvent(this.eventForm.value)
+        this.eventService.create(this.eventForm.value)
             .pipe(first())
             .subscribe(
                 data => {
