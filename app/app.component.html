@@ -2,8 +2,8 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
     <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" routerLink="/">Booked Events</a>
-                <a routerLink="/event" class="btn btn-link">Create Event</a>
+        <a routerLink="/bookings" class="btn btn-link">Event Bookings</a>
+                <a routerLink="/event" class="btn btn-link">Add New Event</a>
 
 
         <a class="nav-item nav-link" (click)="logout()">Logout</a>

@@ -13,6 +13,8 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { EventComponent } from './event';
+import { BookingsComponent } from './bookings';
+
 
 import { AlertComponent } from './_components';
 
