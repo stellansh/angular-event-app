@@ -1,10 +1,17 @@
-<h1>Hi {{currentUser.firstName}}!</h1>
-<p>Welcome to EventApp</p>
-<ul>
+<h2>Welcome to EventApp</h2>
+<p>Hi {{currentUser.firstName}}!</p>
+<h4>Available Events:</h4>
+
+<ul> 
+ 
+  <li> <a routerLink="/" class="btn btn-link">Marathon Day</a> </li> 
+  <li> <a routerLink="/" class="btn btn-link"> Chrismas Party</a></li>
+
+<h4> Users:</h4>
+
   <li *ngFor="let user of users">
-    {{user.username}} ({{user.firstName}} {{user.lastName}}) -
+     {{currentUser.firstName}}
     <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
   </li>
 
 </ul>
-<a routerLink="/event" class="btn btn-link">Create Event</a>
