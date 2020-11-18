@@ -12,7 +12,7 @@ export class EventService {
     }
 
     create(event: Event) {
-        return this.http.post(`/events/event`, event);
+        return this.http.post(`/events/create`, event);
     }
 
     delete(id: number) {

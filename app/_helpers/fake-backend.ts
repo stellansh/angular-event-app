@@ -28,7 +28,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return register();
                 case url.endsWith('/events/authenticate') && method === 'POST':
                     return authenticate();
-              case url.endsWith('events/event') && method === 'POST':
+              case url.endsWith('events/create') && method === 'POST':
                     return create();
                 case url.endsWith('/events') && method === 'GET':
                     return getEvents();
@@ -70,7 +70,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             return ok();
         }
-          function createEvent() {
+          function create() {
             const event = body
 
             if (events.find(x => x.eventname === event.eventname)) {
